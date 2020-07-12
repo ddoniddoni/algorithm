@@ -1,15 +1,16 @@
-const insertionSort = (array) => {
-  let i = 1,
-    j,
-    temp;
-  for (i; i < array.length; i++) {
-    temp = array[i]; // 새로운 숫자 선택
-    for (j = i - 1; j >= 0 && temp < array[j]; j--) {
-      array[j + 1] = array[j];
+const buubleSort = (array) => {
+  let length = array.length;
+  let i, j, temp;
+  for (i = 0; i < length - 1; i++) {
+    for (j = 0; j < length - 1 - i; j++) {
+      if (array[j] > array[j + 1]) {
+        temp = array[j];
+        array[j] = array[j + 1];
+        array[j + 1] = temp;
+      }
     }
-    array[j + 1] = temp;
   }
-  console.log(array);
+  return console.log(array);
 };
 
-insertionSort([10, 25, 11, 2, 6, 76]);
+buubleSort([5, 1, 7, 4, 6, 3, 2, 8]);
