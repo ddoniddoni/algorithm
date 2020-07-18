@@ -28,13 +28,14 @@
   text-align: center;
   height: 40px;
   font-size: 20px;
-  margin-bottom: 20px;
 }
-.selection__btn {
+.selection__btn,
+.bubble__btn {
   border-radius: 20px;
   border: 3px solid #0f0f0f;
   background-color: #0f0f0f;
   color: #f0f0f0;
+  margin-top: 15px;
 }
 .wrapper-view {
   display: flex;
