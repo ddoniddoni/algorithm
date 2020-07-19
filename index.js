@@ -2,6 +2,8 @@ const num__input = document.querySelector(".num__input");
 const selection__btn = document.querySelector(".selection__btn");
 const bubble__btn = document.querySelector(".bubble__btn");
 const insert__num = document.querySelector(".insert__num");
+const reset__btn = document.querySelector(".reset__btn");
+
 let num = document.createElement("span");
 let numArray = [];
 let view__num = document.querySelector(".view__num");
@@ -70,5 +72,13 @@ const bubbleSort = () => {
   }
 };
 
+const handleReset = () => {
+  num.removeChild(num.firstChild);
+  while (view__num.hasChildNodes()) {
+    view__num.removeChild(view__num.firstChild);
+  }
+};
+
 selection__btn.addEventListener("click", selectionSort);
 bubble__btn.addEventListener("click", bubbleSort);
+reset__btn.addEventListener("click", handleReset);
