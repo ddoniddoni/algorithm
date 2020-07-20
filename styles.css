@@ -38,7 +38,8 @@
   font-size: 20px;
 }
 .selection__btn,
-.bubble__btn {
+.bubble__btn,
+.insertion__btn {
   border-radius: 20px;
   border: 3px solid #0f0f0f;
   background-color: #0f0f0f;

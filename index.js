@@ -2,6 +2,7 @@ const num__input = document.querySelector(".num__input");
 const selection__btn = document.querySelector(".selection__btn");
 const bubble__btn = document.querySelector(".bubble__btn");
 const insert__num = document.querySelector(".insert__num");
+const insertion__btn = document.querySelector(".insertion__btn");
 const reset__btn = document.querySelector(".reset__btn");
 
 let num = document.createElement("span");
@@ -25,7 +26,6 @@ const selectionSort = () => {
     for (j = i + 1; j < length; j++) {
       if (numArray[j] < numArray[minIndex]) {
         minIndex = j;
-        console.log("j는", minIndex);
       }
     }
     temp = numArray[minIndex];
@@ -37,7 +37,6 @@ const selectionSort = () => {
     countArray.textContent = numArray;
 
     count.appendChild(countArray);
-    console.log(numArray);
     num__input.value = "";
   }
 };
@@ -67,7 +66,34 @@ const bubbleSort = () => {
     countArray.textContent = numArray;
 
     count.appendChild(countArray);
-    console.log(numArray);
+    num__input.value = "";
+  }
+};
+
+const insertionSort = () => {
+  numArray = num__input.value.split(" ");
+  num.classList = "view__insert-num";
+  num.innerText = num__input.value;
+  insert__num.appendChild(num);
+
+  let i, j, temp;
+  let length = numArray.length;
+  for (i = 1; i < length; i++) {
+    const count = document.createElement("div");
+    count.classList = "num__count";
+    count.textContent = `${i}번째 숫자는 ${numArray[i]}`;
+    view__num.appendChild(count);
+
+    temp = numArray[i]; // 새로운 숫자 선택
+    for (j = i - 1; j >= 0 && temp < numArray[j]; j--) {
+      numArray[j + 1] = numArray[j];
+    }
+    numArray[j + 1] = temp;
+    const countArray = document.createElement("span");
+    countArray.classList = "num__span";
+    countArray.textContent = numArray;
+
+    count.appendChild(countArray);
     num__input.value = "";
   }
 };
@@ -81,4 +107,6 @@ const handleReset = () => {
 
 selection__btn.addEventListener("click", selectionSort);
 bubble__btn.addEventListener("click", bubbleSort);
+insertion__btn.addEventListener("click", insertionSort);
+
 reset__btn.addEventListener("click", handleReset);
