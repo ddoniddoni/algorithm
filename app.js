@@ -1,7 +1,8 @@
-const solution = (strings, n) => {
-  return strings.sort((a, b) =>
-    a[n] === b[n] ? a.localeCompare(b) : a[n].localeCompare(b[n])
-  );
+const solution = (s) => {
+  let a =
+    s.toUpperCase().split("P").length === s.toUpperCase().split("Y").length;
+  console.log(a);
+  console.log(s.toUpperCase().split("P"));
 };
 
-console.log(solution(["sun", "bed", "car"], 1));
+solution("pppppppyyyyy");
