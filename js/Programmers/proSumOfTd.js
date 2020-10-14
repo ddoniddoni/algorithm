@@ -6,7 +6,7 @@ const solution = (n) => {
     }
   }
   let sum = answer.reduce((a, b) => a + b, 0);
-  console.log(sum);
+  return sum;
 };
 
 solution(12);
